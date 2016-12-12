@@ -1,0 +1,341 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical">
+
+    <!--顶部扫码、搜索、消息-->
+    <com.hhzmy.widget.MyToolBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FF5A54"
+        android:minHeight="?attr/actionBarSize"
+        app:isShowSearchView="true">
+
+        <ImageButton
+            android:id="@+id/home_scan"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FF5A54"
+            android:src="@mipmap/icon_scan_top"/>
+
+        <LinearLayout
+            android:id="@+id/home_search"
+            android:layout_marginLeft="10dp"
+            android:layout_width="285dp"
+            android:layout_height="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="7dp"
+            android:background="#ffdedd"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:src="@mipmap/icon_search_home" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:text="好奇" />
+        </LinearLayout>
+
+
+        <ImageButton
+            android:id="@+id/home_meseage"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FF5A54"
+            android:src="@mipmap/icon_mes_top"/>
+    </com.hhzmy.widget.MyToolBar>
+
+    <!--中间整体-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--首页轮播图片-->
+            <com.daimajia.slider.library.SliderLayout
+                android:id="@+id/home_slider"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                />
+
+            <!--轮播图下方菜单-->
+            <com.hhzmy.view.MyGridView
+                android:id="@+id/home_menu"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numColumns="4"/>
+
+            <!--10点秒杀-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:orientation="vertical">
+
+                <!--秒杀名称-->
+                <ImageView
+                    android:scaleType="fitXY"
+                    android:id="@+id/home_miaosha_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"/>
+
+                <!--秒杀内容-->
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:paddingLeft="5dp"
+                    android:scrollbars="none">
+                    
+                    <LinearLayout
+                        android:id="@+id/home_miaosha_content"
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"/>
+                </HorizontalScrollView>
+            </LinearLayout>
+
+            <!--傲娇品牌-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                android:orientation="vertical">
+
+                <!--品牌名字-->
+                <ImageView
+                    android:scaleType="fitXY"
+                    android:id="@+id/home_aojiao_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <!--品牌内容-->
+                <com.hhzmy.view.MyGridView
+                    android:id="@+id/home_aojiao_content_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:numColumns="2"/>
+
+                <com.hhzmy.view.MyGridView
+                    android:id="@+id/home_aojiao_content_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:numColumns="2"/>
+
+                <com.hhzmy.view.MyGridView
+                    android:id="@+id/home_aojiao_content_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:numColumns="2"/>
+            </LinearLayout>
+
+            <!--母婴专区-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!--专区名字-->
+                <ImageView
+                    android:scaleType="fitXY"
+                    android:id="@+id/home_muying_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <!--专区内容-上-->
+                <com.hhzmy.view.MyGridView
+                    android:id="@+id/home_muying_content_top"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:numColumns="2"/>
+                <!--专区内容-下-->
+                <com.hhzmy.view.MyGridView
+                    android:id="@+id/home_muying_content_bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:numColumns="4"/>
+            </LinearLayout>
+
+            <!--主题特卖-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!--特卖名称-->
+                <ImageView
+                    android:id="@+id/home_zhuti_name"
+                    android:scaleType="fitXY"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <!--特卖类型-->
+                <ImageView
+                    android:id="@+id/home_zhuti_type_1"
+                    android:scaleType="fitXY"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <!--特卖内容-->
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:paddingLeft="5dp"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:id="@+id/home_haiwai_content"
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"/>
+                </HorizontalScrollView>
+
+                <!--特卖类型-->
+                <ImageView
+                    android:id="@+id/home_zhuti_type_2"
+                    android:scaleType="fitXY"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <!--特卖内容-->
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:paddingLeft="5dp"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:id="@+id/home_juhui_content"
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"/>
+                </HorizontalScrollView>
+
+                <!--特卖类型-->
+                <ImageView
+                    android:id="@+id/home_zhuti_type_3"
+                    android:scaleType="fitXY"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <!--特卖内容-->
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:paddingLeft="5dp"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:id="@+id/home_liangfan_content"
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"/>
+                </HorizontalScrollView>
+
+                <!--特卖类型-->
+                <ImageView
+                    android:id="@+id/home_zhuti_type_4"
+                    android:scaleType="fitXY"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <!--特卖内容-->
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:paddingLeft="5dp"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:id="@+id/home_shengqian_content"
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"/>
+                </HorizontalScrollView>
+            </LinearLayout>
+     
+            <!--辣妈拼团-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                
+                <!--拼团名称-->
+                <ImageView
+                    android:id="@+id/home_lama_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" 
+                    android:scaleType="fitXY"/>
+                
+                <ImageView
+                    android:id="@+id/home_lama_content_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"/>
+
+                <ImageView
+                    android:id="@+id/home_lama_content_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"/>
+
+                <ImageView
+                    android:id="@+id/home_lama_content_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"/>
+
+                <ImageView
+                    android:id="@+id/home_lama_content_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"/>
+
+                <ImageView
+                    android:id="@+id/home_lama_content_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"/>
+            </LinearLayout>
+
+            <!--查看更多-->
+            <ImageView
+                android:scaleType="fitXY"
+                android:id="@+id/home_select_more"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!--页尾提示-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:gravity="center_horizontal"
+                android:text="---到底啦，明天10点1元秒杀，千万别错过哦~---"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

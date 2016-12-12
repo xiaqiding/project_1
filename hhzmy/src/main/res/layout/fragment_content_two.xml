@@ -1,0 +1,61 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.hhzmy.fragment.ContentOneFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="40dp">
+        <TextView
+            android:id="@+id/goods_img_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:text="图片详情"/>
+        <TextView
+            android:id="@+id/goods_parameter_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:text="规格参数"/>
+        <TextView
+            android:id="@+id/goods_aftersele_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:text="包装售后"/>
+
+
+    </LinearLayout>
+
+    <fragment
+        android:id="@+id/goods_img_content_fr"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="com.hhzmy.fragment.GoodsImgFragment"/>
+
+    <fragment
+        android:id="@+id/goods_parameter_content_fr"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="com.hhzmy.fragment.GoodsParameterFragment"/>
+    <fragment
+        android:id="@+id/goods_aftersele_content_fr"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="com.hhzmy.fragment.GoodsAftersaleFragment"/>
+
+
+</LinearLayout>
